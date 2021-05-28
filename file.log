@@ -1,0 +1,2 @@
+(2021-05-28 16:50:03,931) | no thing till now:(
+(2021-05-28 16:51:17,226) | subprocess.call(['ffmpeg', '-y', '-f', 'mp3', '-i', 'F:/Task4/data/Amrdiab_wahshteny_17.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])

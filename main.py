@@ -12,7 +12,8 @@ from tempfile import mktemp
 #import sklearn
 import librosa.display
 import numpy as np
-from functions import mp3Converter, mixer
+from functions import features, mp3Converter, mixer,spectrogram,features
+#,createPerceptualHash
 
 
 logging.basicConfig(filename="file.log", 
@@ -85,11 +86,14 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         if self.audMix is not None:
             logger.debug("starting Extraction")
 
-          ###warnnn:lesa hagrb fe dol
-
-            #self.spectro = self.spectrogram(self.audMix, self.audRates[0])[-1]
+         ###warnnn:lesa hagrb fe dol
+ 
+            self.spectro = spectrogram(self.audMix, self.audRates[0])
             #self.testHash = createPerceptualHash(self.spectro)
-
+            #print(self.testHash)
+            #print(str(self.testHash))
+            self.featureMixHash=features(self.audMix, self.audRates[0])
+            print(self.featureMixHash)
             #for feature in self.extractFeatures(self.audMix, self.spectro, self.audRates[0]):
              #   self.featureMixHash.append(createPerceptualHash(feature))
 

@@ -42,7 +42,7 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         self.ui.search.clicked.connect(self.extract)
         
         Data=pd.read_excel("database.xls")
-        for i in range(7):
+        for i in range(25):
             self.name.append(Data.iloc[i, 0])
             self.feature1.append(Data.iloc[i, 1]) 
             self.feature2.append(Data.iloc[i, 2]) 
